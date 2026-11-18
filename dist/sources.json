@@ -1,0 +1,183 @@
+[
+  {
+    "id": "R01",
+    "title": "Pengumuman resmi UKPPPG Calon Guru Gelombang 2 Tahun 2026",
+    "url": "https://ppg.kemendikdasmen.go.id/news/informasi-pelaksanaan-ukpppg-bagi-calon-guru-gelombang-2-tahun-2026",
+    "role": "Penyelenggara; pintu acuan versi dan jadwal",
+    "checked_at": "2026-11-18",
+    "status": "Halaman dibaca",
+    "note": "",
+    "local_file": null
+  },
+  {
+    "id": "R02",
+    "title": "Folder juknis yang dirujuk surat resmi",
+    "url": "https://s.id/JuknisUKPPPGCalonGuru2026",
+    "role": "Rujukan utama penyelenggara",
+    "checked_at": "2026-11-18",
+    "status": "Redirect ditemukan; isi folder belum dibaca",
+    "note": "Mengarah ke https://drive.google.com/drive/folders/1GpbHZwyMvNgAlLxbcY5ftT4oh7OWLo08 ; belum dibandingkan dengan salinan LPTK",
+    "local_file": null
+  },
+  {
+    "id": "R03",
+    "title": "Juknis UKPPPG Calon Guru Tahun 2026 - salinan PPG UNISSULA",
+    "url": "https://ppg.unissula.ac.id/wp-content/uploads/2026/11/Juknis-UKPPPG-Calon-Guru-Tahun-2026.pdf",
+    "role": "Dokumen penyelenggara di situs LPTK",
+    "checked_at": "2026-11-18",
+    "status": "PDF diunduh; teks diekstrak; halaman 7 dan 47 diperiksa visual",
+    "note": "48 halaman. Format: hlm 7; studi kasus: hlm 12; kisi-kisi: hlm 47; durasi: lampiran teknis. Metadata pencarian menyebut Draf; cek versi penyelenggara sebelum penggunaan ujian.",
+    "local_file": "sumber/juknis-calon-guru-2026.pdf"
+  },
+  {
+    "id": "R04",
+    "title": "Surat 1140/T/B2/GT.00.02/2026, 12 Oktober 2026",
+    "url": "https://cdn.appgtk.id/portalppg/storage/2026/1140_Informasi%20Pelaksanaan%20UKPPPG%20Calon%20Guru%20Gelombang%202%20Tahun%202026.pdf",
+    "role": "Surat penyelenggara",
+    "checked_at": "2026-11-18",
+    "status": "PDF diunduh; validitas struktur PDF diperiksa",
+    "note": "Jadwal hanya untuk gelombang yang disebut; bukan otomatis jadwal pengguna",
+    "local_file": "sumber/surat-pelaksanaan-calon-guru-g2-2026.pdf"
+  },
+  {
+    "id": "R05",
+    "title": "Panduan Mata Pelajaran Informatika Fase D-F, 2025",
+    "url": "https://repositori.kemendikdasmen.go.id/33634/",
+    "role": "Materi dan pembelajaran mapel resmi",
+    "checked_at": "2026-11-18",
+    "status": "PDF diunduh; struktur dan bagian awal ditelaah",
+    "note": "146 halaman PDF. Halaman cetak: CP 4-14; pemetaan materi 15-71; pembelajaran 72-113. Bukan kisi-kisi UKPPPG khusus bobot bab.",
+    "local_file": "sumber/panduan-mapel-informatika-2025.pdf"
+  },
+  {
+    "id": "R06",
+    "title": "Keputusan Kepala BSKAP 046/H/KR/2025 tentang CP",
+    "url": "https://bpmpbabel.kemendikdasmen.go.id/PPID/wp-content/uploads/2025/07/KepKaBSKAP-046_2025-ttg-CP.pdf",
+    "role": "Capaian Pembelajaran resmi",
+    "checked_at": "2026-11-18",
+    "status": "PDF diunduh; struktur PDF diperiksa; belum ditelaah lengkap",
+    "note": "Fokus bagian Informatika; status unduhan tambahan di download-status.json",
+    "local_file": "sumber/cp-bskap-046-2025.pdf"
+  },
+  {
+    "id": "R07",
+    "title": "Penjelasan perubahan CP 2026 terbatas pada Agama dan Budi Pekerti",
+    "url": "https://www.kemendikdasmen.go.id/download/file/1933",
+    "role": "Siaran pers penyelenggara",
+    "checked_at": "2026-11-18",
+    "status": "Isi terindeks dibaca",
+    "note": "23 Juni 2026; menjelaskan CP mapel lain tetap mengacu 046/2025",
+    "local_file": null
+  },
+  {
+    "id": "R08",
+    "title": "Panduan Pembelajaran dan Asesmen Edisi Revisi 2025",
+    "url": "https://repositori.kemendikdasmen.go.id/33290/",
+    "role": "Pedagogi; perencanaan, asesmen, pelaporan dan refleksi",
+    "checked_at": "2026-11-18",
+    "status": "PDF diunduh; struktur PDF diperiksa; belum ditelaah lengkap",
+    "note": "Referensi pendukung; tidak menggantikan kisi-kisi UKPPPG",
+    "local_file": "sumber/panduan-pembelajaran-asesmen-2025.pdf",
+    "download_url": "https://kurikulum.kemendikdasmen.go.id/file/1755670818_manage_file.pdf"
+  },
+  {
+    "id": "R09",
+    "title": "Panduan Guru Informatika SMP/MTs VII Edisi Revisi",
+    "url": "https://repositori.kemendikdasmen.go.id/35834/",
+    "role": "Buku guru resmi; strategi, pengayaan, penilaian",
+    "checked_at": "2026-11-18",
+    "status": "Metadata terindeks dibaca",
+    "note": "Belum ditelaah lengkap; cocokkan versi buku siswa dan CP",
+    "local_file": null
+  },
+  {
+    "id": "R10",
+    "title": "Panduan Guru Informatika Kelas X Edisi Revisi",
+    "url": "https://buku.kemendikdasmen.go.id/katalog/panduan-guru-informatika-untuk-smamasmkmak-kelas-x-edisi-revisi",
+    "role": "Buku guru resmi",
+    "checked_at": "2026-11-18",
+    "status": "Katalog terindeks; aplikasi memerlukan JavaScript",
+    "note": "Belum ditelaah lengkap",
+    "local_file": null
+  },
+  {
+    "id": "R11",
+    "title": "Panduan Guru Informatika SMA/MA XI Edisi Revisi",
+    "url": "https://buku.kemendikdasmen.go.id/katalog/panduan-guru-informatika-untuk-smama-kelas-xi-edisi-revisi",
+    "role": "Buku guru resmi",
+    "checked_at": "2026-11-18",
+    "status": "Metadata terindeks dibaca; aplikasi memerlukan JavaScript",
+    "note": "Belum ditelaah lengkap",
+    "local_file": null
+  },
+  {
+    "id": "R12",
+    "title": "Buku Interaktif Informatika SMP/MTs VII Edisi Revisi",
+    "url": "https://buku.kemendikdasmen.go.id/katalog/buku-interaktif-informatika-untuk-smp-mts-kelas-vii-edisi-revisi",
+    "role": "Buku siswa resmi; konsep dan aktivitas",
+    "checked_at": "2026-11-18",
+    "status": "Katalog terindeks ditemukan",
+    "note": "Aktivitas siswa bukan soal resmi UKPPPG",
+    "local_file": null
+  },
+  {
+    "id": "R13",
+    "title": "Modul Belajar Mandiri Informatika GTK 2021",
+    "url": "https://repositori.kemendikdasmen.go.id/22736/",
+    "role": "Pengayaan fondasi TIK, RPL, jaringan dan multimedia",
+    "checked_at": "2026-11-18",
+    "status": "PDF diunduh; struktur PDF diperiksa; belum ditelaah lengkap",
+    "note": "Untuk PPPK tahun 2021; bukan blueprint UKPPPG Calon Guru 2026",
+    "local_file": "sumber/modul-informatika-gtk-2021.pdf"
+  },
+  {
+    "id": "R14",
+    "title": "Pembahasan Soal Bebras Indonesia",
+    "url": "https://bebras.or.id/v3/pembahasan-soal/",
+    "role": "Latihan penalaran komputasional",
+    "checked_at": "2026-11-18",
+    "status": "Ditautkan biro perguruan tinggi; akses langsung 403",
+    "note": "Bukan soal UKPPPG. Periksa hak penggunaan setiap soal sebelum publikasi ulang",
+    "local_file": null
+  },
+  {
+    "id": "R15",
+    "title": "Halaman pembahasan Bebras alternatif",
+    "url": "https://bebras.konsulasi.com/soal/pembahasan-soal",
+    "role": "Alternatif penelusuran latihan CT",
+    "checked_at": "2026-11-18",
+    "status": "Terindeks; pembacaan langsung timeout",
+    "note": "Isi/tautan individual belum diverifikasi",
+    "local_file": null
+  },
+  {
+    "id": "R16",
+    "title": "Portal peserta UKPPPG",
+    "url": "https://ukpppg.bppp.kemendikdasmen.go.id",
+    "role": "Pendaftaran dan simulasi peserta",
+    "checked_at": "2026-11-18",
+    "status": "Keberadaan fitur simulasi disebut juknis; akun tidak diakses",
+    "note": "Jangan mengklaim soal simulator telah dikoleksi",
+    "local_file": null
+  },
+  {
+    "id": "R17",
+    "title": "Portal UKin UKPPPG",
+    "url": "https://ukin-ukpppg.bppp.kemendikdasmen.go.id",
+    "role": "Unggah dan penilaian UKin",
+    "checked_at": "2026-11-18",
+    "status": "Ditautkan kanal penyelenggara; akun tidak diakses",
+    "note": "Dokumen peserta bersifat pribadi",
+    "local_file": null
+  },
+  {
+    "id": "R18",
+    "title": "Pengumuman UKPPPG Calon Guru G2 2026 - Undiksha",
+    "url": "https://ppg.undiksha.ac.id/informasi-ukpppg-cagur-gel2-2026/",
+    "role": "LPTK; pemeriksaan silang jadwal",
+    "checked_at": "2026-11-18",
+    "status": "Tabel jadwal dibaca",
+    "note": "Jadwal dapat berubah; kartu peserta dan surat terbaru menjadi acuan",
+    "local_file": null
+  }
+]

@@ -1,0 +1,277 @@
+{
+  "status": "9 prototipe orisinal; bukan bank soal final",
+  "questions": [
+    {
+      "id": "INF-001",
+      "section": "PCK",
+      "topic": "Pemrograman dan miskonsepsi",
+      "type": "single_choice",
+      "stem": "Dalam pseudocode FOR i = 0 TO 4, kedua batas ikut diproses. Seorang murid mengatakan loop hanya berjalan empat kali. Tindakan awal paling tepat untuk mengungkap dan memperbaiki pemahamannya adalah ...",
+      "options": {
+        "A": "Meminta murid menghafal bahwa semua loop berjalan lima kali",
+        "B": "Meminta prediksi, lalu membuat tabel jejak nilai i dan keluaran bersama murid",
+        "C": "Mengganti semua loop dengan salinan instruksi berulang",
+        "D": "Langsung memberikan program jadi untuk disalin"
+      },
+      "answer": "B",
+      "explanation": "Tabel jejak memperlihatkan lima nilai: 0, 1, 2, 3, 4. Prediksi sebelum penelusuran membantu menemukan alasan kekeliruan. A membuat generalisasi salah; C dan D tidak mengungkap miskonsepsi.",
+      "competency_codes": [
+        "P.1",
+        "P.6",
+        "PF.2"
+      ],
+      "source_ids": [
+        "R03",
+        "R05"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "INF-002",
+      "section": "PCK",
+      "topic": "Pembelajaran dengan sarana terbatas",
+      "type": "multiple_response",
+      "stem": "Tujuan pembelajaran adalah menjelaskan algoritma pengurutan. Hanya ada satu komputer untuk empat murid. Pilih DUA tindakan yang memberi bukti pemahaman setiap murid.",
+      "options": {
+        "A": "Memberi peran kelompok bergilir dan meminta penjelasan langkah tiap anggota",
+        "B": "Memberi nilai sama berdasar kecepatan satu operator mengetik",
+        "C": "Memakai kartu angka untuk simulasi dan memberi tugas jejak singkat individual",
+        "D": "Meniadakan asesmen karena komputer terbatas"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "A dan C membuka partisipasi serta menyediakan bukti individual. Kecepatan satu operator tidak mewakili pemahaman semua anggota; keterbatasan alat tidak menghilangkan kebutuhan asesmen.",
+      "competency_codes": [
+        "P.2",
+        "P.5",
+        "P.6"
+      ],
+      "source_ids": [
+        "R03",
+        "R05"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "INF-003",
+      "section": "PCK",
+      "topic": "Literasi digital dan privasi",
+      "type": "category_matrix",
+      "stem": "Guru akan memakai data kehadiran untuk mengajarkan analisis data. Tentukan apakah setiap tindakan sesuai dengan prinsip pembelajaran yang menjaga privasi.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Memakai data rekaan dengan pola yang cukup realistis untuk dianalisis"
+        },
+        {
+          "id": "b",
+          "text": "Mengunggah daftar nama, alamat, dan nomor telepon murid ke situs publik agar mudah diakses"
+        },
+        {
+          "id": "c",
+          "text": "Membahas mengapa identitas langsung tidak diperlukan untuk tujuan analisis"
+        }
+      ],
+      "answer": {
+        "a": "Sesuai",
+        "b": "Tidak sesuai",
+        "c": "Sesuai"
+      },
+      "explanation": "Data rekaan dan pembahasan minimisasi data mendukung tujuan tanpa membuka identitas. Publikasi identitas dan kontak tidak diperlukan untuk latihan tersebut.",
+      "competency_codes": [
+        "P.4",
+        "K.1",
+        "PF.2"
+      ],
+      "source_ids": [
+        "R03",
+        "R05"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "INF-004",
+      "section": "PCK",
+      "topic": "Analisis data",
+      "type": "single_choice",
+      "stem": "Nilai pada spreadsheet tampak seperti angka, tetapi sebagian tersimpan sebagai teks sehingga rumus penjumlahan tidak memasukkannya. Aktivitas paling tepat untuk membantu murid memahami penyebabnya adalah ...",
+      "options": {
+        "A": "Mengganti perangkat komputer",
+        "B": "Menghapus data yang tidak ikut terjumlah",
+        "C": "Membandingkan tipe nilai pada contoh kecil, memprediksi hasil rumus, lalu mengonversi dan mengecek ulang",
+        "D": "Menyuruh murid memakai kalkulator tanpa membahas data"
+      },
+      "answer": "C",
+      "explanation": "Perbandingan contoh terkontrol menghubungkan representasi/tipe data dengan hasil pemrosesan. A tidak menguji hipotesis; B merusak data; D menghindari konsep yang sedang dipelajari.",
+      "competency_codes": [
+        "P.1",
+        "P.6",
+        "PF.2"
+      ],
+      "source_ids": [
+        "R03",
+        "R05"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "INF-005",
+      "section": "PCK",
+      "topic": "Pengujian dan asesmen program",
+      "type": "multiple_response",
+      "stem": "Murid membuat fungsi nilai maksimum untuk daftar bilangan yang tidak kosong. Program hanya diuji pada [2, 4, 7]. Pilih DUA kasus uji tambahan yang relevan untuk memperluas bukti kebenaran.",
+      "options": {
+        "A": "[-8, -3, -5], untuk mendeteksi asumsi awal maksimum selalu nol",
+        "B": "[9], untuk memeriksa daftar satu elemen",
+        "C": "[2, 4, 7], dengan warna editor berbeda",
+        "D": "[2, 4, 7], dengan nama berkas lain"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "Bilangan negatif mengungkap inisialisasi yang salah; satu elemen memeriksa kasus batas yang masih berada dalam prasyarat. C dan D tidak mengubah kasus masukan.",
+      "competency_codes": [
+        "P.6",
+        "PF.2"
+      ],
+      "source_ids": [
+        "R03",
+        "R05"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "INF-006",
+      "section": "PCK",
+      "topic": "Berpikir komputasional",
+      "type": "single_choice",
+      "stem": "Dalam proyek rute pengangkutan sampah sekolah, murid memasukkan warna pagar dan merek tas warga ke model rute tanpa menjelaskan relevansinya. Pertanyaan guru yang paling membantu mengembangkan abstraksi adalah ...",
+      "options": {
+        "A": "Informasi mana yang memengaruhi jarak dan keterhubungan lokasi, dan mana yang bisa diabaikan untuk tujuan ini?",
+        "B": "Mengapa kamu tidak menyalin seluruh informasi yang tersedia?",
+        "C": "Bisakah semua informasi dihapus agar model selalu sederhana?",
+        "D": "Maukah kamu mengganti proyek dengan menghafal istilah abstraksi?"
+      },
+      "answer": "A",
+      "explanation": "Abstraksi memilih informasi relevan terhadap tujuan pemodelan. Menambah semua detail atau menghapus semuanya sama-sama tidak mempertimbangkan fungsi model.",
+      "competency_codes": [
+        "P.1",
+        "PF.2"
+      ],
+      "source_ids": [
+        "R03",
+        "R05"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "PU-001",
+      "section": "PU",
+      "topic": "Asesmen dan tindak lanjut",
+      "type": "single_choice",
+      "stem": "Hasil asesmen awal menunjukkan tiga kelompok kesiapan yang berbeda terhadap prasyarat pelajaran. Langkah guru paling tepat adalah ...",
+      "options": {
+        "A": "Memberi label kemampuan permanen pada murid",
+        "B": "Menyesuaikan bantuan dan tantangan berdasarkan bukti, lalu menilai ulang perkembangan",
+        "C": "Mengulang seluruh pelajaran dengan cara yang sama tanpa memakai hasil asesmen",
+        "D": "Hanya mengajar kelompok yang paling siap"
+      },
+      "answer": "B",
+      "explanation": "Asesmen awal digunakan untuk menyesuaikan dukungan, kemudian diperbarui melalui bukti perkembangan. Label permanen dan pengabaian kelompok lain tidak responsif terhadap kebutuhan murid.",
+      "competency_codes": [
+        "P.2",
+        "P.6"
+      ],
+      "source_ids": [
+        "R03",
+        "R08"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "PU-002",
+      "section": "PU",
+      "topic": "Umpan balik",
+      "type": "category_matrix",
+      "stem": "Tentukan kesesuaian setiap bentuk umpan balik dengan tujuan membantu murid memperbaiki proses belajarnya.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Menunjukkan bagian jawaban yang belum didukung alasan dan meminta murid memperbaikinya"
+        },
+        {
+          "id": "b",
+          "text": "Menyebut murid tidak berbakat di depan kelas"
+        },
+        {
+          "id": "c",
+          "text": "Memberi kesempatan menggunakan umpan balik untuk merevisi hasil kerja"
+        }
+      ],
+      "answer": {
+        "a": "Sesuai",
+        "b": "Tidak sesuai",
+        "c": "Sesuai"
+      },
+      "explanation": "Umpan balik berfokus pada pekerjaan dan langkah perbaikan, serta menyediakan kesempatan tindak lanjut. Pelabelan pribadi di depan kelas tidak membantu perbaikan dan merusak rasa aman.",
+      "competency_codes": [
+        "P.6",
+        "S.1"
+      ],
+      "source_ids": [
+        "R03",
+        "R08"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    },
+    {
+      "id": "PU-003",
+      "section": "PU",
+      "topic": "Refleksi profesional",
+      "type": "multiple_response",
+      "stem": "Setelah pembelajaran, banyak murid gagal menjelaskan konsep walaupun tugas selesai. Pilih DUA tindakan reflektif yang paling langsung menggunakan bukti untuk memperbaiki pengajaran.",
+      "options": {
+        "A": "Menelaah jawaban dan percakapan murid untuk menemukan pola kesulitan",
+        "B": "Menyimpulkan semua murid malas tanpa memeriksa proses",
+        "C": "Menguji perbaikan strategi dan membandingkan bukti pemahaman sesudahnya",
+        "D": "Mempertahankan cara yang sama karena materi sudah disampaikan"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "A mengidentifikasi masalah berbasis bukti dan C menguji dampak perubahan. B mengganti analisis dengan asumsi; D menyamakan penyampaian materi dengan terjadinya belajar.",
+      "competency_codes": [
+        "K.2",
+        "P.6",
+        "PF.5"
+      ],
+      "source_ids": [
+        "R03",
+        "R08"
+      ],
+      "origin": "Soal latihan orisinal yang disusun untuk prototipe; bukan soal resmi",
+      "review_status": "Draf; belum ditelaah pakar",
+      "source_scope": "Rujukan konsep dan kompetensi, bukan asal teks soal"
+    }
+  ]
+}
