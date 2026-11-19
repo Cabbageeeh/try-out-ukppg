@@ -19,3 +19,5 @@ Variasi soal: `dist/extra-bank.js` menambah 50 PCK dan 40 PU, masing-masing deng
 Design: `dashboard-view.js`, `shell-view.js`, dan `editorial.css` mengikuti referensi desktop/mobile: sidebar hijau, aksen lime, tipografi serif, cakupan latihan horizontal, dan navigasi ponsel di bawah. Statistik dan riwayat menampilkan data lokal aktual, termasuk keadaan kosong. Tema gelap tetap tersedia.
 
 Nama: browser baru wajib mengisi nama panggilan sebelum mengakses materi atau tryout. Tidak ada nama default. Nama tersimpan di data lokal `nalar.ukpppg.v1`; nama yang sudah tersimpan tetap dipakai. Form menolak nama kosong atau hanya spasi dan membatasi 40 karakter. Jika penyimpanan diblokir, nama berlaku dalam memori selama halaman terbuka.
+
+Impeccable polish: shared design tokens and components in `dist/ui.css` align every route with the supplied dashboard reference. Dark colors use semantic tokens rather than per-page palettes. Body and answer text, focus states, touch targets, readable matrices, modals, navigation, and print treatment are included. See `DESIGN.md` for scope and the Impeccable launcher fallback disclosure.
