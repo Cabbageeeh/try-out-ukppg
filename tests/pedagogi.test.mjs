@@ -7,6 +7,8 @@ import * as engine from '../dist/engine.js';
 import {pedagogiTopics, selectPedagogiQuestions, pedagogiTopicFor, pedagogiTryoutMinutes} from '../dist/pedagogi.js';
 import {pedagogiPage} from '../dist/pedagogi-page.js';
 import {selectTryout} from '../dist/selection.js';
+import {dashboardView} from '../dist/dashboard-view.js';
+import {shellView} from '../dist/shell-view.js';
 
 const seed=JSON.parse(await readFile(new URL('../dist/seed.json',import.meta.url),'utf8'));
 const nativeFetch=globalThis.fetch;
@@ -42,7 +44,7 @@ function appHarness(){
  const element=()=>({innerHTML:'',textContent:'',open:false,addEventListener(){},classList:{add(){},remove(){},toggle(){}},focus(){},showModal(){this.open=true;},close(){this.open=false;}});
  const app=element(),modal=element(),toast=element();let selectedMode='simulation';
  const context=vm.createContext({
-  ...engine,pedagogiTopics,selectPedagogiQuestions,pedagogiTryoutMinutes,pedagogiPage,selectTryout,
+  ...engine,pedagogiTopics,selectPedagogiQuestions,pedagogiTryoutMinutes,pedagogiPage,selectTryout,dashboardView,shellView,
   document:{querySelector:s=>s==='#app'?app:s==='#modal'?modal:s==='#toast'?toast:s==='input[name="feedback-mode"]:checked'?{value:selectedMode}:null,addEventListener:(type,fn)=>{(listeners[type]??=[]).push(fn);}},
   window:{addEventListener(){},scrollTo(){},print(){}},location:{hash:'#pedagogi'},
   localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
