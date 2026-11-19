@@ -189,5 +189,35 @@
     "status": "Halaman resmi dibaca; ringkasan model kompetensi ditelaah",
     "note": "Sumber pengayaan; bukan kisi-kisi atau bobot soal UKPPPG 2026.",
     "local_file": null
+  },
+  {
+    "id": "R20",
+    "title": "Python Tutorial — More Control Flow Tools",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html",
+    "role": "Pengayaan konsep Informatika; bukan kisi-kisi ujian",
+    "checked_at": "2026-11-19",
+    "status": "Dokumentasi resmi dibaca",
+    "note": "Rujukan konsep untuk pembahasan butir orisinal; bukan asal teks soal.",
+    "local_file": null
+  },
+  {
+    "id": "R21",
+    "title": "PostgreSQL Tutorial — Aggregate Functions",
+    "url": "https://www.postgresql.org/docs/current/tutorial-agg.html",
+    "role": "Pengayaan konsep Informatika; bukan kisi-kisi ujian",
+    "checked_at": "2026-11-19",
+    "status": "Dokumentasi resmi dibaca",
+    "note": "Rujukan konsep untuk pembahasan butir orisinal; bukan asal teks soal.",
+    "local_file": null
+  },
+  {
+    "id": "R22",
+    "title": "MDN — What is a domain name?",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name",
+    "role": "Pengayaan konsep Informatika; bukan kisi-kisi ujian",
+    "checked_at": "2026-11-19",
+    "status": "Dokumentasi resmi dibaca",
+    "note": "Rujukan konsep untuk pembahasan butir orisinal; bukan asal teks soal.",
+    "local_file": null
   }
 ]

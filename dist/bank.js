@@ -1,4 +1,6 @@
 import {pedagogiTopicFor} from './pedagogi.js';
+import {pedagogiTopics} from './pedagogi.js';
+import {extraQuestions} from './extra-bank.js';
 // Soal latihan orisinal. R03: kisi-kisi UKPPPG; R05: panduan mapel; R08: pedagogi.
 const bank=[];
 const A='Algoritma & pemrograman', B='Berpikir komputasional', D='Analisis data', L='Literasi digital', N='Sistem & jaringan', T='Pembelajaran Informatika', U='Pedagogi umum';
@@ -230,5 +232,5 @@ export async function loadBank() {
   const response=await fetch('./seed.json'); if(!response.ok)throw new Error('Bank soal tidak dapat dimuat.');
   const seed=(await response.json()).questions;
   const map={'INF-001':A,'INF-002':T,'INF-003':L,'INF-004':D,'INF-005':A,'INF-006':B,'PU-001':U,'PU-002':U,'PU-003':U};
-  return [...seed.map(q=>({...q,topic:map[q.id],categories:q.type==='category_matrix'?['Sesuai','Tidak sesuai']:undefined})),...bank].map(q=>q.section==='PU'?{...q,topic:pedagogiTopicFor(q.id)?.title||q.topic}:q).sort((a,b)=>a.id.localeCompare(b.id));
+  return [...seed.map(q=>({...q,topic:map[q.id],categories:q.type==='category_matrix'?['Sesuai','Tidak sesuai']:undefined})),...bank,...extraQuestions].map(q=>q.section==='PU'?{...q,topic:pedagogiTopics.find(t=>t.id===q.puTopic)?.title||pedagogiTopicFor(q.id)?.title||q.topic}:q).sort((a,b)=>a.id.localeCompare(b.id));
 }

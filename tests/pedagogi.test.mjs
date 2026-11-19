@@ -6,6 +6,7 @@ import {loadBank} from '../dist/bank.js';
 import * as engine from '../dist/engine.js';
 import {pedagogiTopics, selectPedagogiQuestions, pedagogiTopicFor, pedagogiTryoutMinutes} from '../dist/pedagogi.js';
 import {pedagogiPage} from '../dist/pedagogi-page.js';
+import {selectTryout} from '../dist/selection.js';
 
 const seed=JSON.parse(await readFile(new URL('../dist/seed.json',import.meta.url),'utf8'));
 const nativeFetch=globalThis.fetch;
@@ -14,10 +15,10 @@ const bank=await loadBank();
 globalThis.fetch=nativeFetch;
 const sources=JSON.parse(await readFile(new URL('../dist/sources.json',import.meta.url),'utf8'));
 
-test('eight PU topics partition all 30 questions exactly once and link to existing sources',()=>{
+test('eight PU topics partition all 70 questions exactly once and link to existing sources',()=>{
  assert.equal(pedagogiTopics.length,8);
- const ids=pedagogiTopics.flatMap(t=>t.questionIds);
- assert.equal(ids.length,30);assert.equal(new Set(ids).size,30);
+ const ids=pedagogiTopics.flatMap(t=>selectPedagogiQuestions(bank,t.id).map(q=>q.id));
+ assert.equal(ids.length,70);assert.equal(new Set(ids).size,70);
  assert.deepEqual(ids.toSorted(),bank.filter(q=>q.section==='PU').map(q=>q.id).toSorted());
  for(const t of pedagogiTopics){
   const qs=selectPedagogiQuestions(bank,t.id);
@@ -26,7 +27,7 @@ test('eight PU topics partition all 30 questions exactly once and link to existi
   assert.ok(t.sources.every(id=>sources.some(s=>s.id===id)),t.id);
  }
  const pu=selectPedagogiQuestions(bank);
- assert.equal(pu.length,30);assert.equal(new Set(pu.map(q=>q.type)).size,3);
+ assert.equal(pu.length,70);assert.equal(new Set(pu.map(q=>q.type)).size,3);
  assert.equal(pedagogiTryoutMinutes,55);
  assert.throws(()=>selectPedagogiQuestions(bank,'missing'));
  assert.equal(pedagogiTopicFor('INF-001'),undefined);
@@ -41,7 +42,7 @@ function appHarness(){
  const element=()=>({innerHTML:'',textContent:'',open:false,addEventListener(){},classList:{add(){},remove(){},toggle(){}},focus(){},showModal(){this.open=true;},close(){this.open=false;}});
  const app=element(),modal=element(),toast=element();let selectedMode='simulation';
  const context=vm.createContext({
-  ...engine,pedagogiTopics,selectPedagogiQuestions,pedagogiTryoutMinutes,pedagogiPage,
+  ...engine,pedagogiTopics,selectPedagogiQuestions,pedagogiTryoutMinutes,pedagogiPage,selectTryout,
   document:{querySelector:s=>s==='#app'?app:s==='#modal'?modal:s==='#toast'?toast:s==='input[name="feedback-mode"]:checked'?{value:selectedMode}:null,addEventListener:(type,fn)=>{(listeners[type]??=[]).push(fn);}},
   window:{addEventListener(){},scrollTo(){},print(){}},location:{hash:'#pedagogi'},
   localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
@@ -60,7 +61,7 @@ test('PU tryout uses only 30 PU questions and a 55 minute deadline; topic practi
  assert.equal(h.run("active.questions.every(q=>q.section==='PU')"),true);
  assert.ok(Math.abs(h.run('active.deadline-active.startedAt')-55*60000)<100);
  h.run("active=null;requestStart('pu-topic','asesmen');start()");
- assert.equal(h.run('active.deadline'),null);assert.equal(h.run('active.questions.length'),4);
+ assert.equal(h.run('active.deadline'),null);assert.equal(h.run('active.questions.length'),9);
  assert.equal(h.run("active.questions.every(q=>q.topic==='Asesmen & umpan balik')"),true);
 });
 
@@ -73,9 +74,24 @@ test('expired PU tryout finishes automatically and retains all question response
  assert.equal(h.run('Object.keys(history[0].answers).length'),1);
 });
 
-test('old broad PU results can still start a 30 question practice session',()=>{
+test('old broad PU results can still start a practice session from the expanded pool',()=>{
  const h=appHarness();h.run("requestStart('practice','Pedagogi umum');start()");
- assert.equal(h.run('active.questions.length'),30);assert.equal(h.run('active.deadline'),null);
+ assert.equal(h.run('active.questions.length'),70);assert.equal(h.run('active.deadline'),null);
+});
+
+test('app selects sized full and sprint packages and preserves their exact snapshot on reload',()=>{
+ const h=appHarness();h.run("requestStart('full');start()");
+ assert.equal(h.run('active.questions.length'),80);
+ assert.equal(h.run("active.questions.filter(q=>q.section==='PCK').length"),50);
+ const first=h.run("active.questions.map(q=>q.id).sort().join('|')");
+ h.run('save();active=null;read();render()');
+ assert.equal(h.run("active.questions.map(q=>q.id).sort().join('|')"),first);
+ assert.equal(h.run("active.bankVersion"),'2026.2');
+ h.run("complete(false);requestStart('full');start()");
+ assert.notEqual(h.run("active.questions.map(q=>q.id).sort().join('|')"),first);
+ h.run("complete(false);requestStart('sprint');start()");
+ assert.equal(h.run('active.questions.length'),20);
+ assert.equal(h.run("active.questions.filter(q=>q.section==='PCK').length"),13);
 });
 
 test('learning reveals single and completed matrix answers, waits for MCMA confirmation, locks and persists',()=>{

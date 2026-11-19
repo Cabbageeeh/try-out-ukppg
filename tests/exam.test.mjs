@@ -7,9 +7,10 @@ const nativeFetch=globalThis.fetch;
 globalThis.fetch=async()=>({ok:true,json:async()=>JSON.parse(await readFile(new URL('../dist/seed.json',import.meta.url),'utf8'))});
 const bank=await loadBank();
 globalThis.fetch=nativeFetch;
-test('80 unique questions; 50 PCK, 30 PU; keys and all three response types valid',()=>{
- assert.equal(bank.length,80);assert.equal(new Set(bank.map(q=>q.id)).size,80);
- assert.equal(bank.filter(q=>q.section==='PCK').length,50);assert.equal(bank.filter(q=>q.section==='PU').length,30);
+test('170 unique questions; 100 PCK, 70 PU; keys and all three response types valid',()=>{
+ assert.equal(bank.length,170);assert.equal(new Set(bank.map(q=>q.id)).size,170);
+ assert.equal(new Set(bank.map(q=>q.stem.trim().toLowerCase())).size,170);
+ assert.equal(bank.filter(q=>q.section==='PCK').length,100);assert.equal(bank.filter(q=>q.section==='PU').length,70);
  assert.equal(new Set(bank.map(q=>q.type)).size,3);
  for(const q of bank){assert.ok(q.explanation.length>70,q.id);assert.ok(q.source_ids.length,q.id);assert.ok(q.competency_codes.length,q.id);
   if(q.type==='single_choice')assert.ok(q.options[q.answer],q.id);
@@ -31,9 +32,9 @@ test('partial category response is incomplete, full wrong response is wrong',()=
  const g=grade([q],{[q.id]:{[first]:q.answer[first]}});assert.equal(g.empty,1);assert.equal(g.wrong,0);
 });
 test('unanswered bank yields zero; perfect bank yields 100 and sums per topic',()=>{
- const empty=grade(bank,{});assert.equal(empty.score,0);assert.equal(empty.empty,80);
- const perfect=grade(bank,Object.fromEntries(bank.map(q=>[q.id,q.answer])));assert.equal(perfect.score,100);assert.equal(perfect.correct,80);assert.equal(perfect.empty,0);
- assert.equal(perfect.topics.reduce((s,t)=>s+t.total,0),80);
+ const empty=grade(bank,{});assert.equal(empty.score,0);assert.equal(empty.empty,bank.length);
+ const perfect=grade(bank,Object.fromEntries(bank.map(q=>[q.id,q.answer])));assert.equal(perfect.score,100);assert.equal(perfect.correct,bank.length);assert.equal(perfect.empty,0);
+ assert.equal(perfect.topics.reduce((s,t)=>s+t.total,0),bank.length);
 });
 test('deadline persists independently of reload or timer ticks',()=>{
  const start=1000000,deadline=start+150*60*1000;

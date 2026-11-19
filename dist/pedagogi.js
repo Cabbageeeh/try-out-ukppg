@@ -131,8 +131,8 @@ export function pedagogiTopicFor(questionId) {
 export function selectPedagogiQuestions(bank, topicId=null) {
   const topic=topicId===null?null:pedagogiTopics.find(t=>t.id===topicId);
   if(topicId!==null&&!topic)throw new Error('Topik Pedagogi Umum tidak ditemukan.');
-  return bank.filter(q=>q.section==='PU'&&(!topic||topic.questionIds.includes(q.id)))
-    .map(q=>({...q,topic:pedagogiTopicFor(q.id)?.title||q.topic}));
+  return bank.filter(q=>q.section==='PU'&&(!topic||q.puTopic===topic.id||topic.questionIds.includes(q.id)))
+    .map(q=>({...q,topic:pedagogiTopics.find(t=>t.id===q.puTopic)?.title||pedagogiTopicFor(q.id)?.title||q.topic}));
 }
 
 export const pedagogiTryoutMinutes = 55; // Durasi latihan Nalar, bukan durasi resmi terpisah.
