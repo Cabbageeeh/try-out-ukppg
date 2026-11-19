@@ -8,8 +8,8 @@ const signature=questions=>questions.map(q=>q.id).sort().join('|');
 export function sampleQuestions(pool,count,history=[],random=Math.random){
  if(!Number.isInteger(count)||count<1||pool.length<count)throw new Error('Bank soal tidak mencukupi untuk paket ini.');
  if(new Set(pool.map(q=>q.id)).size!==pool.length)throw new Error('Identitas soal dalam bank tidak unik.');
- const ids=new Set(pool.map(q=>q.id));
- const previous=history.slice(0,12).map(h=>(h.questions||[]).filter(q=>ids.has(q.id))).filter(qs=>qs.length);
+ const revisions=new Map(pool.map(q=>[q.id,q.bank_revision]));
+ const previous=history.slice(0,12).map(h=>(h.questions||[]).filter(q=>revisions.has(q.id)&&q.bank_revision===revisions.get(q.id))).filter(qs=>qs.length);
  const seen=new Set(previous.flatMap(qs=>qs.map(q=>q.id)));
  const ranked=shuffle(pool,random).sort((a,b)=>Number(seen.has(a.id))-Number(seen.has(b.id)));
  const topics=[...new Set(pool.map(q=>q.topic))],types=[...new Set(pool.map(q=>q.type))];

@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {loadBank} from '../dist/bank.js';
 import {sampleQuestions,selectTryout} from '../dist/selection.js';
 import {pedagogiTopics} from '../dist/pedagogi.js';
-const seed=JSON.parse(await readFile(new URL('../dist/seed.json',import.meta.url),'utf8'));
+const seed={questions:[]};
 const nativeFetch=globalThis.fetch;
 globalThis.fetch=async()=>({ok:true,json:async()=>seed});
 const bank=await loadBank();globalThis.fetch=nativeFetch;
@@ -36,11 +36,14 @@ test('full, sprint and PU packages preserve exact composition without duplicate 
  }
 });
 
-test('a full package after an old 80-question attempt prefers the newly added questions',()=>{
- const old=bank.filter(q=>Number(q.id.split('-')[1])<=(q.section==='PU'?30:50));
- const fresh=selectTryout(bank,'full',[{questions:old}],seeded(3));
- const oldIds=new Set(old.map(q=>q.id));
- assert.equal(fresh.filter(q=>oldIds.has(q.id)).length,0);
+test('legacy content with reused IDs does not count as having seen the revised questions',()=>{
+ const legacy=bank.map(q=>({...structuredClone(q),bank_revision:undefined,stem:'Old content'}));
+ const fresh=selectTryout(bank,'full',[{questions:legacy}],seeded(3));
+ assert.deepEqual(fresh,selectTryout(bank,'full',[],seeded(3)));
+ const pool=bank.filter(q=>q.section==='PCK'&&q.topic===bank[0].topic);
+ const seen=sampleQuestions(pool,3,[],seeded(2));
+ const next=sampleQuestions(pool,3,[{questions:seen}],seeded(2));
+ assert.ok(next.every(q=>!seen.some(old=>old.id===q.id)));
 });
 
 test('repeated tryouts change question sets, not just order, across the retained history',()=>{

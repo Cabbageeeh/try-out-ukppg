@@ -11,7 +11,7 @@ import {dashboardView} from '../dist/dashboard-view.js';
 import {shellView} from '../dist/shell-view.js';
 import {normalizeName,welcomeView} from '../dist/profile.js';
 
-const seed=JSON.parse(await readFile(new URL('../dist/seed.json',import.meta.url),'utf8'));
+const seed={questions:[]};
 const nativeFetch=globalThis.fetch;
 globalThis.fetch=async()=>({ok:true,json:async()=>seed});
 const bank=await loadBank();
@@ -106,7 +106,7 @@ test('PU tryout uses only 30 PU questions and a 55 minute deadline; topic practi
  assert.equal(h.run("active.questions.every(q=>q.section==='PU')"),true);
  assert.ok(Math.abs(h.run('active.deadline-active.startedAt')-55*60000)<100);
  h.run("active=null;requestStart('pu-topic','asesmen');start()");
- assert.equal(h.run('active.deadline'),null);assert.equal(h.run('active.questions.length'),9);
+ assert.equal(h.run('active.deadline'),null);assert.equal(h.run('active.questions.length'),10);
  assert.equal(h.run("active.questions.every(q=>q.topic==='Asesmen & umpan balik')"),true);
 });
 
@@ -124,6 +124,16 @@ test('old broad PU results can still start a practice session from the expanded 
  assert.equal(h.run('active.questions.length'),70);assert.equal(h.run('active.deadline'),null);
 });
 
+test('coverage separates replacement questions from legacy snapshots while retaining old results',()=>{
+ const h=appHarness();
+ h.run("const legacy=structuredClone(bank[0]);delete legacy.bank_revision;legacy.stem='Saved old question';history=[{id:'legacy',questions:[legacy],answers:{[legacy.id]:legacy.answer},elapsed:60}]");
+ assert.equal(h.run('covered()'),0);
+ assert.equal(h.run('grade(history[0].questions,history[0].answers).score'),100);
+ assert.equal(h.run('history[0].questions[0].stem'),'Saved old question');
+ h.run('history.push({questions:[bank[0]],answers:{[bank[0].id]:bank[0].answer},elapsed:60})');
+ assert.equal(h.run('covered()'),1);
+});
+
 test('app selects sized full and sprint packages and preserves their exact snapshot on reload',()=>{
  const h=appHarness();h.run("requestStart('full');start()");
  assert.equal(h.run('active.questions.length'),80);
@@ -131,7 +141,7 @@ test('app selects sized full and sprint packages and preserves their exact snaps
  const first=h.run("active.questions.map(q=>q.id).sort().join('|')");
  h.run('save();active=null;read();render()');
  assert.equal(h.run("active.questions.map(q=>q.id).sort().join('|')"),first);
- assert.equal(h.run("active.bankVersion"),'2026.2');
+ assert.equal(h.run("active.bankVersion"),'2026.3-cases');
  h.run("complete(false);requestStart('full');start()");
  assert.notEqual(h.run("active.questions.map(q=>q.id).sort().join('|')"),first);
  h.run("complete(false);requestStart('sprint');start()");

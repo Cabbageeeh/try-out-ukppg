@@ -1,8 +1,9 @@
+import {casePuTopicIds} from './case-bank.js';
 // Pengelompokan belajar Nalar, bukan bobot bab atau paket resmi UKPPPG.
 export const pedagogiTopics = [
   {
     id:'karakteristik', title:'Karakteristik & kebutuhan murid', icon:'user', minutes:8,
-    questionIds:['PU-005','PU-009','PU-025'], sources:['R03','R08'],
+    sources:['R03','R08'],
     intro:'Kenali murid melalui bukti belajar, percakapan, dan pengamatan. Kebutuhan serta kesiapan dapat berubah; satu hasil tes tidak cukup untuk memberi label kemampuan.',
     concepts:[
       ['Kesiapan, minat, dan konteks','Kesiapan adalah penguasaan prasyarat untuk tujuan tertentu. Minat dapat menjadi pintu masuk kegiatan. Bahasa, pengalaman, dukungan keluarga, serta akses sumber belajar membantu menjelaskan konteks tanpa menentukan batas kemampuan murid.'],
@@ -17,7 +18,7 @@ export const pedagogiTopics = [
   },
   {
     id:'teori-belajar', title:'Teori belajar & pembelajaran bermakna', icon:'bulb', minutes:10,
-    questionIds:['PU-011','PU-017','PU-023'], sources:['R03','R08'],
+    sources:['R03','R08'],
     intro:'Gunakan teori belajar untuk menjelaskan kebutuhan dan memilih tindakan. Keaktifan fisik atau suasana ramai belum menunjukkan bahwa murid memahami konsep.',
     concepts:[
       ['Behaviorisme dan kognitivisme','Pendekatan perilaku membantu melatih rutinitas melalui latihan dan penguatan yang jelas. Pendekatan kognitif menyoroti perhatian, pengetahuan awal, ingatan, dan strategi berpikir. Pilih berdasarkan tujuan, bukan satu pendekatan untuk semua persoalan.'],
@@ -32,7 +33,7 @@ export const pedagogiTopics = [
   },
   {
     id:'perencanaan', title:'Kurikulum, tujuan & perencanaan', icon:'file', minutes:10,
-    questionIds:['PU-004','PU-007','PU-026'], sources:['R03','R08'],
+    sources:['R03','R08'],
     intro:'Rancang pembelajaran dari kompetensi yang ingin dicapai, bukti ketercapaian, lalu pengalaman belajar. Media dan kegiatan dipilih untuk melayani tujuan tersebut.',
     concepts:[
       ['CP, tujuan, dan alur','Capaian Pembelajaran memberi arah kompetensi dalam fase. Tujuan Pembelajaran memperjelas kompetensi dan lingkup materi yang akan dipelajari. Alur Tujuan Pembelajaran menyusun urutan yang logis dengan memperhatikan prasyarat dan perkembangan kemampuan.'],
@@ -47,7 +48,7 @@ export const pedagogiTopics = [
   },
   {
     id:'diferensiasi', title:'Diferensiasi & pendidikan inklusif', icon:'layers', minutes:9,
-    questionIds:['PU-001','PU-010','PU-012','PU-027'], sources:['R03','R08'],
+    sources:['R03','R08'],
     intro:'Perluas akses dan sesuaikan bantuan agar setiap murid mendapat kesempatan belajar yang bermakna. Penyesuaian didasarkan bukti kebutuhan serta dievaluasi kembali.',
     concepts:[
       ['Diferensiasi yang dinamis','Variasikan sumber, proses, bantuan, atau bentuk produk sesuai kebutuhan. Kelompok kesiapan dapat berubah antar tujuan dan setelah intervensi. Diferensiasi tidak mengharuskan satu rencana unik untuk setiap murid setiap saat.'],
@@ -62,7 +63,7 @@ export const pedagogiTopics = [
   },
   {
     id:'asesmen', title:'Asesmen & umpan balik', icon:'chart', minutes:12,
-    questionIds:['PU-002','PU-006','PU-014','PU-022'], sources:['R03','R08'],
+    sources:['R03','R08'],
     intro:'Asesmen mengumpulkan bukti untuk menentukan langkah belajar dan menilai ketercapaian tujuan. Instrumen yang baik perlu diikuti interpretasi yang hati-hati dan tindakan yang jelas.',
     concepts:[
       ['Fungsi asesmen','Asesmen awal memetakan kesiapan dan kebutuhan. Formatif memberi informasi selama proses agar guru dan murid dapat memperbaiki langkah. Sumatif menilai capaian pada lingkup pembelajaran tertentu. Fungsi ditentukan tujuan penggunaan hasil, bukan semata bentuk tes atau waktunya.'],
@@ -78,7 +79,7 @@ export const pedagogiTopics = [
   },
   {
     id:'lingkungan', title:'Pengelolaan kelas & rasa aman', icon:'shield', minutes:8,
-    questionIds:['PU-013','PU-016'], sources:['R03','R19'],
+    sources:['R03','R19'],
     intro:'Kelas yang aman menyediakan rutinitas, interaksi yang menghargai, dan kesempatan berpartisipasi. Keberhasilan pengelolaan kelas dilihat dari kualitas belajar serta kesejahteraan murid.',
     concepts:[
       ['Pencegahan dan kesepakatan','Bangun aturan yang jelas, masuk akal, dan dipahami bersama; ajarkan rutinitas serta contoh perilaku yang diharapkan. Transisi yang terencana dan tugas yang sesuai mengurangi kebingungan serta waktu tanpa arah.'],
@@ -93,7 +94,7 @@ export const pedagogiTopics = [
   },
   {
     id:'etika', title:'Etika, komunikasi & kolaborasi', icon:'user', minutes:8,
-    questionIds:['PU-008','PU-018','PU-021'], sources:['R03','R19'],
+    sources:['R03','R19'],
     intro:'Keputusan guru perlu adil, menjaga martabat serta privasi murid, dan membuka kerja sama. Komunikasi yang efektif menghubungkan bukti dengan dukungan yang dapat dilaksanakan.',
     concepts:[
       ['Integritas dan keadilan','Gunakan bukti kompetensi serta kriteria yang relevan. Hindari konflik kepentingan, manipulasi nilai, atau membedakan kesempatan karena kedekatan pribadi. Keteladanan juga tampak ketika mengakui keterbatasan dan memperbaiki kesalahan.'],
@@ -108,7 +109,7 @@ export const pedagogiTopics = [
   },
   {
     id:'refleksi', title:'Refleksi & pengembangan profesional', icon:'history', minutes:10,
-    questionIds:['PU-003','PU-015','PU-019','PU-020','PU-024','PU-028','PU-029','PU-030'], sources:['R03','R08','R19'],
+    sources:['R03','R08','R19'],
     intro:'Refleksi menghubungkan tujuan, keputusan mengajar, bukti dampak, dan rencana perbaikan. Pengalaman yang belum berhasil tetap dapat menjadi dasar pembelajaran profesional yang jujur.',
     concepts:[
       ['Deskripsi dan analisis','Deskripsi menjawab apa yang terjadi; analisis memeriksa mengapa hasil berbeda dari harapan. Gunakan contoh respons, pekerjaan murid, atau observasi. Pisahkan data yang terlihat dari dugaan penyebab.'],
@@ -122,16 +123,16 @@ export const pedagogiTopics = [
     pitfalls:['Merekayasa hasil agar laporan selalu terlihat sukses.','Menyalin pengalaman orang lain sebagai pengalaman sendiri.','Menggunakan kesan kelas ramai sebagai satu-satunya bukti dampak.'],
     recall:'Perubahan apa yang akan dilakukan berikutnya, dan bukti apa yang menunjukkan perubahan itu membantu murid?'
   }
-];
+].map(t=>({...t,questionIds:casePuTopicIds[t.id]||[]}));
 
 export function pedagogiTopicFor(questionId) {
-  return pedagogiTopics.find(t=>t.questionIds.includes(questionId));
+  return pedagogiTopics.find(t=>casePuTopicIds[t.id]?.includes(questionId));
 }
 
 export function selectPedagogiQuestions(bank, topicId=null) {
   const topic=topicId===null?null:pedagogiTopics.find(t=>t.id===topicId);
   if(topicId!==null&&!topic)throw new Error('Topik Pedagogi Umum tidak ditemukan.');
-  return bank.filter(q=>q.section==='PU'&&(!topic||q.puTopic===topic.id||topic.questionIds.includes(q.id)))
+  return bank.filter(q=>q.section==='PU'&&(!topic||q.puTopic===topic.id||(!q.puTopic&&casePuTopicIds[topic.id]?.includes(q.id))))
     .map(q=>({...q,topic:pedagogiTopics.find(t=>t.id===q.puTopic)?.title||pedagogiTopicFor(q.id)?.title||q.topic}));
 }
 

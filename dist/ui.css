@@ -34,4 +34,5 @@ dialog{width:590px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 40px);o
 
 /* Long topic and reference labels must wrap on narrow phones. */
 .main .pill{white-space:normal;max-width:100%;overflow-wrap:anywhere}.main .review-card>.row>div{min-width:0;max-width:100%}.exam-mode input{accent-color:var(--ui-focus)}
+.exam-mode .question-text,.main .review-card .stem{white-space:pre-line}
 

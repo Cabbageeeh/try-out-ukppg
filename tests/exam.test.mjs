@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {loadBank} from '../dist/bank.js';
 import {answered,correct,grade,remaining,clock,shuffle} from '../dist/engine.js';
 const nativeFetch=globalThis.fetch;
-globalThis.fetch=async()=>({ok:true,json:async()=>JSON.parse(await readFile(new URL('../dist/seed.json',import.meta.url),'utf8'))});
+globalThis.fetch=async()=>({ok:true,json:async()=>({questions:[]})});
 const bank=await loadBank();
 globalThis.fetch=nativeFetch;
 test('170 unique questions; 100 PCK, 70 PU; keys and all three response types valid',()=>{
