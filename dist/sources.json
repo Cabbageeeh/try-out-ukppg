@@ -179,5 +179,15 @@
     "status": "Tabel jadwal dibaca",
     "note": "Jadwal dapat berubah; kartu peserta dan surat terbaru menjadi acuan",
     "local_file": null
+  },
+  {
+    "id": "R19",
+    "title": "Panduan Operasional Model Kompetensi Guru 2023 — GTK",
+    "url": "https://gtk.kemendikdasmen.go.id/read-news/panduan-operasional-model-kompetensi-guru-2023",
+    "role": "Pengayaan kompetensi pedagogik, kepribadian, sosial, dan profesional",
+    "checked_at": "2026-11-19",
+    "status": "Halaman resmi dibaca; ringkasan model kompetensi ditelaah",
+    "note": "Sumber pengayaan; bukan kisi-kisi atau bobot soal UKPPPG 2026.",
+    "local_file": null
   }
 ]
